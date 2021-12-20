@@ -1,3 +1,6 @@
 # HotelReservationIS
-3rd Sem / Programming basics
-Info for initial commit
+3rd Sem / Programming basics  
+
+
+## Структура базы данных:
+![Picture](DB_structure.png)
