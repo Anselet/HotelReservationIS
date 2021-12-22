@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room — HotelReservationIS</title>
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <link href="./assets/css/app.css" rel="stylesheet">
+</head>
+<body>
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img src="/assets/img/logo.png" class="logo" alt="Booking">
+      </a>
+      <div class="ms-lg-auto text-end">
+        <button type="button" class="btn btn-outline-light me-2">Войти</button>
+        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">Зарегистрироваться</button>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container content">
+  <div class="room">
+    <div class="room__intro">
+      <div>
+        <img class="room__img" src="https://q-xx.bstatic.com/images/hotel/max500/157/15728638.jpg" alt="room">
+      </div>
+      <div class="room__options">
+        <h1 class="room__title">Room 1</h1>
+        <div class="room__price">9500₽</div>
+        <div>Осталось 7 номеров!</div>
+        <div class="input-group input-daterange room__booking">
+          <input type="text" class="form-control">
+          <div class="room__bookingSeparator"> — </div>
+          <input type="text" class="form-control">
+        </div>
+        <div>
+          <button class="btn btn-info btn-lg">Забронировать</button>
+        </div>
+      </div>
+    </div>
+    <div class="room__description">
+      <ul>
+        <li>Кухня</li>
+        <li>Ванная</li>
+        <li>Интернет</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="footer bg-dark">
+  <div class="container">
+    2021 (c) HotelReservationIS
+  </div>
+</footer>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="signUp-form" id="signUp-form" action="./DataAccessLayer/SignUp.php"  method="post">
+          <div class="form-group row">
+            <label for="Name" class="col-md-4 col-form-label text-md-right">Имя</label>
+            <div class="col-md-6">
+              <input type="text" id="Name" class="form-control" name="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+            <div class="col-md-6">
+              <input type="text" id="email_address" class="form-control" name="email-address">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="phone_number" class="col-md-4 col-form-label text-md-right">Телефон</label>
+            <div class="col-md-6">
+              <input type="text" id="phone_number" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Пароль</label>
+            <div class="col-md-6">
+              <input type="text" id="permanent_address" class="form-control" name="permanent-address">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./jquery-3.6.0.js"></script>
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/validator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ru.min.js" charset="UTF-8"></script>
+<script src="assets/js/custom.js"></script>
+</body>
+</html>
