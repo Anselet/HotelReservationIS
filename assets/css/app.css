@@ -62,12 +62,12 @@ body {
     align-items: center;
 }
 
-.card__title {
-    font-size: 28px;
+.card__title__1, .card__title__2,.card__title__3, .card__title__4, .card__title__5 {
+    font-size: 24px;
     font-weight: 600;
 }
 
-.card__price {
+.card__price__1, .card__price__2, .card__price__3, .card__price__4, .card__price__5 {
     font-size: 22px;
     text-align: right;
 }
