@@ -1,6 +1,5 @@
 <?php
 include('SqlQueries.php');
-session_start();
 date_default_timezone_set('Europe/Moscow');
 $timeStart = microtime(true);
 
@@ -16,7 +15,7 @@ $response="";
 //$responseArray["Phone"]=$PhoneNumber;
 if(CheckEmail($Email))
     $response = "Уже есть пользователь с таким Email";
-else if (AddNewUser($Name,$PhoneNumber,$Email,$Password))
+else if (AddNewUser($Name,$PhoneNumber,$Email,md5($Password)))
     $response = "Вы успешно зарегистрировались";
 else
     $response = "Сожалеем, во время регистрации произола ошибка";

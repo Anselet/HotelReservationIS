@@ -2,25 +2,30 @@
 
 
 let formSignUp = document.getElementById("signUp-form");
-let formSignIn = document.getElementById("login-form")
+let formSignIn = document.getElementById("login-form");
+// alert(document.cookie)
 // let validateListener = validateY;
 // form.addEventListener("input", validateListener);
 
-// $.ajax({
-//     url: "session.php",
-//     dataType:"json",
-//     success:function(sessionRows){
-//         var mass = sessionRows["rows"];
-//         if(!(mass.length === undefined ||mass.length == null)){
-//             for (let row in mass){
-//                 addRow(mass[row]);
-//             }
-//         }
-//     },
-//     xhrFields: {
-//         withCredentials: true
-//     }
-// });
+$.ajax({
+    url: "./DataAccessLayer/Session.php",
+    dataType:"json",
+    response: "json",
+    success:function(cookie){
+        // console.log("Ajax "+JSON.stringify(cookie["User"]))
+        document.cookie="user="+JSON.stringify(cookie["User"]);
+    },
+    xhrFields: {
+        withCredentials: true
+    }
+});
+
+console.log(getCookie("user"))
+if (getCookie("user") != null){
+    let cookie = JSON.parse(getCookie("user"))
+    $('.named__user').attr('style','display: block;')
+    $('#Name__top').append(cookie.Name)
+} else $('.top__button').attr('style','display: block;')
 
 //AJAX
     $.ajax({
@@ -65,7 +70,7 @@ $(function() {
         }).done(function() {
             console.log('success');
         }).fail(function() {
-            alert('Что-то пошло нетак');
+            alert('Что-то пошло не так');
         });
     });
 });
@@ -82,9 +87,9 @@ $(function() {
             dataType:"json",
             response:"json",
             beforeSend: function(){
-                $('.modal.fade.show').attr('style','display: none;')
-                $('.modal-backdrop.fade.show').remove()
-                $('#regButton').click()
+               // $('.modal.fade.show').attr('style','display: none;')
+               // $('.modal-backdrop.fade.show').remove()
+               // $('#regButton').click()
 
             },
             success: function (data){
@@ -97,6 +102,13 @@ $(function() {
         });
     });
 });
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 //~~~~~~~~~~~~~~~~~~~~~~~//
 
 
