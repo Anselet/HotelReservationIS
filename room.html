@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,8 +16,13 @@
         <img src="/assets/img/logo.png" class="logo" alt="Booking">
       </a>
       <div class="ms-lg-auto text-end">
-        <button type="button" class="btn btn-outline-light me-2">Войти</button>
-        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">Зарегистрироваться</button>
+        <div class="named__user" style="display: none">
+          Вы вошли как <a href="./profile.html" id="Name__top" class="text-white"></a>
+        </div>
+        <div class="top__button" style="display: none">
+          <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#login-modal">Войти</button>
+          <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#register-modal" id="regButton">Зарегистрироваться</button>
+        </div>
       </div>
     </div>
   </div>
@@ -26,20 +31,24 @@
   <div class="room">
     <div class="room__intro">
       <div>
-        <img class="room__img" src="null" alt="room">
+        <img class="room__img" src="" alt="room">
       </div>
       <div class="room__options">
         <h1 class="room__title"></h1>
         <div class="room__price"></div>
         <div class="room__free"></div>
-        <div class="input-group input-daterange room__booking">
-          <input type="text" class="form-control">
-          <div class="room__bookingSeparator"> — </div>
-          <input type="text" class="form-control">
-        </div>
-        <div>
-          <button class="btn btn-info btn-lg">Забронировать</button>
-        </div>
+          <form name="booking-form" id="booking-form" action="./DataAccessLayer/BookRoom.php"  method="post">
+            <div class="input-group input-daterange room__booking">
+              <input type="text" class="form-control" name="first_date">
+              <div class="room__bookingSeparator"> — </div>
+              <input type="text" class="form-control"  name="second_date">
+            </div>
+            <div>
+              <button  class="btn btn-info btn-lg" style="margin-top: 15px">Забронировать</button>
+            </div>
+            <div class="warning">Для бронирования номера необходима авторизация!</div>
+            <div class="warning__1">Не осталось свободдных номеров!</div>
+          </form>
       </div>
     </div>
     <div class="room__description">
@@ -99,7 +108,7 @@
 </div>
 <script src="./jquery-3.6.0.js"></script>
 <script src="./assets/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/js/roomValidator.js"></script>
+<script type="module"  src="./assets/js/roomValidator.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ru.min.js" charset="UTF-8"></script>
 <script src="assets/js/custom.js"></script>

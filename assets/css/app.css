@@ -135,3 +135,8 @@ body {
 .footer__container {
     margin-top: 50px;
 }
+
+.warning, .warning__1{
+    color: red;
+    display: none;
+}
