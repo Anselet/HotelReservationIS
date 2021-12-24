@@ -69,4 +69,4 @@
 
 
 ## Структура базы данных:
-![Picture](DB_structure.png)
+![Picture](DB_structure_1.png)
