@@ -1,6 +1,3 @@
-
-
-
 let formSignUp = document.getElementById("signUp-form");
 let formSignIn = document.getElementById("login-form");
 // document.addEventListener('cookiechange', ({detail: {oldValue, newValue}})=> {
