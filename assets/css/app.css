@@ -1,0 +1,142 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    width: 55px;
+}
+
+.content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.content__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+@media (max-width: 767px) {
+    .content__row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    display: grid;
+    grid-gap: 15px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #f3f3f3;
+}
+
+.card, .card:hover {
+    color: inherit;
+}
+
+.card:hover {
+    border-style: dashed;
+    border-color: #424242;
+    opacity: .9;
+}
+
+.card__img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+.card__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.card__title__1, .card__title__2,.card__title__3, .card__title__4, .card__title__5 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.card__price__1, .card__price__2, .card__price__3, .card__price__4, .card__price__5 {
+    font-size: 22px;
+    text-align: right;
+}
+
+.room {}
+.room__intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 60px;
+    margin-bottom: 50px;
+}
+
+.room__img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.room__options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.room__title {
+    font-size: 50px;
+}
+
+.room__price {
+    font-size: 28px;
+}
+
+.room__booking {
+    align-items: center;
+}
+
+.room__bookingSeparator {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.footer {
+    margin-top: auto;
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.profile {}
+.profile__options {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.profile__options > li:not(:last-child) {
+    margin-bottom: 10px;
+}
+.profile__orders {
+    width: 100%;
+    margin-top: 15px;
+}
+.profile__orders td, .profile__orders th {
+    padding: 5px;
+    border: 1px solid #8d8d8d;
+}
+
+.footer__container {
+    margin-top: 50px;
+}
+
+.warning, .warning__1{
+    color: red;
+    display: none;
+}
